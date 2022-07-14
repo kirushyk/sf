@@ -8,15 +8,9 @@
 #ifndef TEXTURES_HPP_INCLUDED
 #define TEXTURES_HPP_INCLUDED
 
-#ifdef __APPLE__
-#include <SDL/SDL.h>
-#include <SDL/SDL_ttf.h>
-#include <SDL/SDL_image.h>
-#else
 #include <SDL.h>
 #include <SDL_ttf.h>
 #include <SDL_image.h>
-#endif
 
 #include <map>
 #include <string>

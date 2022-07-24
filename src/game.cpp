@@ -143,19 +143,21 @@ int Game::MainLoop()
                                           WIDTH, HEIGHT,
                                           SDL_WINDOW_OPENGL);
     SDL_GLContext context = SDL_GL_CreateContext(window);
-    SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    //SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
     //SDL_Surface* screen = SDL_SetVideoMode(WIDTH, HEIGHT, 24, SDL_OPENGL | SDL_HWSURFACE | SDL_DOUBLEBUF | (fullscreen ? SDL_FULLSCREEN : 0));
-    if (!renderer)
-    {
-        fprintf(stderr, "Unable to set video mode: %s\n", SDL_GetError());
-        return 1;
-    }
+    // if (!renderer)
+    // {
+    //     fprintf(stderr, "Unable to set video mode: %s\n", SDL_GetError());
+    //     return 1;
+    // }
     // SDL_WM_SetCaption("Strange fruits", "Strange fruits");
     SDL_GL_SetAttribute(SDL_GL_RED_SIZE,     8);
     SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE,   8);
     SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE,    8);
     SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE,   16);
+    SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE,   8);
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+    SDL_GL_SetAttribute(SDL_GL_ACCELERATED_VISUAL, 1 );
 
     w = new World();
     t = new TexturesManager();
@@ -305,7 +307,8 @@ int Game::MainLoop()
     delete t;
     delete w;
     
-    SDL_DestroyRenderer(renderer);
+    SDL_GL_DeleteContext( context );
+    //SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
     return 0;

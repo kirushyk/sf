@@ -116,7 +116,7 @@ void Play(uint32_t ElapsedTime, uint8_t *keys)
         player->RunLeft();
     if (keys[SDLK_RIGHT] || keys[SDLK_d])
         player->RunRight();
-    if (keys[SDLK_SPACE] || keys[SDLK_UP] || keys[SDLK_KP2])
+    if (keys[SDLK_SPACE] || keys[SDLK_UP] || keys[SDLK_KP_2])
         player->Jump();
     w->ScreenCenter = player->Position;
     Background0->Position = w->ScreenCenter;
@@ -139,14 +139,18 @@ int Game::MainLoop()
         return 1;
     }
     TTF_Init();
-    atexit(SDL_Quit);
-    SDL_Surface* screen = SDL_SetVideoMode(WIDTH, HEIGHT, 24, SDL_OPENGL | SDL_HWSURFACE | SDL_DOUBLEBUF | (fullscreen ? SDL_FULLSCREEN : 0));
-    if (!screen)
+    SDL_Window *window = SDL_CreateWindow("Strange fruits", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+                                          WIDTH, HEIGHT,
+                                          SDL_WINDOW_OPENGL);
+    SDL_GLContext context = SDL_GL_CreateContext(window);
+    SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    //SDL_Surface* screen = SDL_SetVideoMode(WIDTH, HEIGHT, 24, SDL_OPENGL | SDL_HWSURFACE | SDL_DOUBLEBUF | (fullscreen ? SDL_FULLSCREEN : 0));
+    if (!renderer)
     {
         fprintf(stderr, "Unable to set video mode: %s\n", SDL_GetError());
         return 1;
     }
-    SDL_WM_SetCaption("Strange fruits", "Strange fruits");
+    // SDL_WM_SetCaption("Strange fruits", "Strange fruits");
     SDL_GL_SetAttribute(SDL_GL_RED_SIZE,     8);
     SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE,   8);
     SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE,    8);
@@ -260,18 +264,18 @@ int Game::MainLoop()
                 }
             }
         }
-        uint8_t *keys = SDL_GetKeyState(0);
-        switch (mode)
-        {
-            case gmMenu:
-                Menu(ElapsedTime, keys);
-                break;
-            case gmPlay:
-                Play(ElapsedTime, keys);
-                break;
-            default:
-                break;
-        }
+        uint8_t *keys = 0;//SDL_GetKeyState(0);
+        // switch (mode)
+        // {
+        //     case gmMenu:
+        //         Menu(ElapsedTime, keys);
+        //         break;
+        //     case gmPlay:
+        //         Play(ElapsedTime, keys);
+        //         break;
+        //     default:
+        //         break;
+        // }
         w->Iteration(gamepause ? 0 : ElapsedTime);
         Frames++;
         if (ThisTickCount - LastFrame > 500)
@@ -282,7 +286,10 @@ int Game::MainLoop()
         }
         RenderText(Font, 255, 205, 0, 36.f, 4.75f, Buff);
         RenderText(Font, 64, 64, 255, 10.5f, 15.5f, "Eggplants must die!!!");
-        SDL_GL_SwapBuffers();
+        //SDL_GL_SwapBuffers();
+        // Update screen
+        SDL_GL_SwapWindow(window);
+        //SDL_RenderPresent(renderer);
     }
     TTF_CloseFont(Font);
     for (int i = 0; i < MAX_AMOUNT_OF_LEVEL_SPRITES; i++)
@@ -297,6 +304,10 @@ int Game::MainLoop()
     delete psEx;
     delete t;
     delete w;
+    
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
+    SDL_Quit();
     return 0;
 }
 

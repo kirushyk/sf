@@ -21,8 +21,8 @@ executable('strange-fruits',
     sources,
     dependencies: [
         dependency('gl'),
-        dependency('sdl'),
-        dependency('sdl_ttf'),
-        dependency('sdl_image')
+        dependency('sdl2'),
+        dependency('sdl2_ttf'),
+        dependency('sdl2_image')
     ]
 )

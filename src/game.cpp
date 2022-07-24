@@ -96,27 +96,25 @@ void SetGameMode(GameMode _mode)
 void Menu(uint32_t ElapsedTime, const uint8_t *keys)
 {
     w->ScreenCenter.Set(0.f, 0.f);
-    if (keys[SDLK_RETURN])
+    if (keys[SDL_SCANCODE_RETURN])
         SetGameMode(gmPlay);
-    if (keys[SDLK_q])
+    if (keys[SDL_SCANCODE_Q])
         done = true;
 }
 
 void Play(uint32_t ElapsedTime, const uint8_t *keys)
 {
-    if (keys[SDLK_ESCAPE])
+    if (keys[SDL_SCANCODE_ESCAPE])
         SetGameMode(gmMenu);
-    if (keys[SDLK_F4])
+    if (keys[SDL_SCANCODE_F4])
         gamepause = true;
-    if (keys[SDLK_F5])
+    if (keys[SDL_SCANCODE_F5])
         gamepause = false;
-    if (keys[SDLK_ESCAPE])
-        SetGameMode(gmMenu);
-    if (keys[SDLK_LEFT] || keys[SDLK_a])
+    if (keys[SDL_SCANCODE_LEFT] || keys[SDL_SCANCODE_A])
         player->RunLeft();
-    if (keys[SDLK_RIGHT] || keys[SDLK_d])
+    if (keys[SDL_SCANCODE_RIGHT] || keys[SDL_SCANCODE_D])
         player->RunRight();
-    if (keys[SDLK_SPACE] || keys[SDLK_UP] || keys[SDLK_KP_2])
+    if (keys[SDL_SCANCODE_SPACE] || keys[SDL_SCANCODE_UP] || keys[SDL_SCANCODE_KP_2])
         player->Jump();
     w->ScreenCenter = player->Position;
     Background0->Position = w->ScreenCenter;

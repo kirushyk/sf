@@ -93,7 +93,7 @@ void SetGameMode(GameMode _mode)
     }
 }
 
-void Menu(uint32_t ElapsedTime, uint8_t *keys)
+void Menu(uint32_t ElapsedTime, const uint8_t *keys)
 {
     w->ScreenCenter.Set(0.f, 0.f);
     if (keys[SDLK_RETURN])
@@ -102,7 +102,7 @@ void Menu(uint32_t ElapsedTime, uint8_t *keys)
         done = true;
 }
 
-void Play(uint32_t ElapsedTime, uint8_t *keys)
+void Play(uint32_t ElapsedTime, const uint8_t *keys)
 {
     if (keys[SDLK_ESCAPE])
         SetGameMode(gmMenu);
@@ -261,23 +261,23 @@ int Game::MainLoop()
                 case SDL_KEYDOWN:
                 {
                   if (event.key.keysym.sym == SDLK_ESCAPE)
-                    //done = true;
+                    done = true;
                     break;
                 }
             }
         }
-        uint8_t *keys = 0;//SDL_GetKeyState(0);
-        // switch (mode)
-        // {
-        //     case gmMenu:
-        //         Menu(ElapsedTime, keys);
-        //         break;
-        //     case gmPlay:
-        //         Play(ElapsedTime, keys);
-        //         break;
-        //     default:
-        //         break;
-        // }
+        const uint8_t *keys = SDL_GetKeyboardState(0);
+        switch (mode)
+        {
+            case gmMenu:
+                Menu(ElapsedTime, keys);
+                break;
+            case gmPlay:
+                Play(ElapsedTime, keys);
+                break;
+            default:
+                break;
+        }
         w->Iteration(gamepause ? 0 : ElapsedTime);
         Frames++;
         if (ThisTickCount - LastFrame > 500)

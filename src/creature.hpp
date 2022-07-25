@@ -10,7 +10,7 @@
 enum RunDirectionType {rdNone, rdLeft, rdRight, rdFlightLeft, rdFlightRight};
 enum AIType {aiNone, aiRun, aiJump, aiGuard};
 
-typedef class Creature: public Actor
+class Creature: public Actor
 {
 	public:
 		explicit                  Creature(World *_Owner);
@@ -31,4 +31,4 @@ typedef class Creature: public Actor
   protected:
     RunDirectionType         AIDest;
 
-} *PCreature;
+};

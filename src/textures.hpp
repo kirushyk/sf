@@ -16,7 +16,7 @@
 
 uint32_t LoadFont(const char *FontName, int Size, SDL_Color Color);
 
-typedef class TexturesManager
+class TexturesManager
 {
   public:
                                       TexturesManager();
@@ -25,6 +25,6 @@ typedef class TexturesManager
   private:
     std::map<std::string, uint32_t>   AlreadyLoaded;
     uint32_t                          Load(std::string FileName);
-} *PTexturesManager;
+};
 
 void print(SDL_Surface *sDest, char *message, TTF_Font *font, SDL_Color color, SDL_Rect rect);

@@ -11,16 +11,16 @@
 #define TILEX 64
 #define TILEY 64
 
-typedef struct LevelSprite
+struct LevelSprite
 {
 	char           FileName[64];
 	float          x,
                    y,
                    width,
                    height;
-} *PLevelSprite;
+};
 
-typedef struct Level
+struct Level
 {
 	float          Left,
 	               Bottom;
@@ -31,7 +31,7 @@ typedef struct Level
 	               BottomLevel;
 	uint16_t       AmountOfSprites;
 	LevelSprite    Sprites[MAX_AMOUNT_OF_LEVEL_SPRITES];
-} *PLevel;
+};
 
 void LoadLevel(Level *);
 

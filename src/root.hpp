@@ -9,7 +9,7 @@
 
 enum EntityType {etRoot, etVisible, etSprite, etParticleSystem, etActor, etCreature, etPlayer};
 
-typedef class Root
+class Root
 {
 	public:
 		explicit                 Root(class World *_Owner);
@@ -23,4 +23,4 @@ typedef class Root
 	protected:
 		class World              *const Owner;
 		bool                     TreatmentInIteration;
-} *PRoot;
+};

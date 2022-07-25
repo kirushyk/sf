@@ -7,7 +7,7 @@
 
 #pragma once
 
-typedef class Actor: public Sprite
+class Actor: public Sprite
 {
     public:
         explicit                  Actor(World *_Owner);
@@ -20,4 +20,4 @@ typedef class Actor: public Sprite
         bool                      OnTheFloor();
         Vector                    Speed;
         bool                      Ricochet;
-} *PActor;
+};

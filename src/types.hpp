@@ -26,7 +26,7 @@ typedef struct Vector
 
 float DotProduct(Vector &, Vector &);
 
-typedef struct Color
+struct Color
 {
   float       a,
               r,
@@ -38,7 +38,7 @@ typedef struct Color
   uint32_t    Get() const;
   void        Set(uint32_t _c);
   void        Set(float _a, float _r, float _g, float _b);
-} *PColor;
+};
 
 Color InterpolateColors(Color A, Color B, float Scalar);
 

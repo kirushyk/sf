@@ -8,7 +8,7 @@
 
 #pragma once
 
-typedef class Sprite: public Visible
+class Sprite: public Visible
 {
 	public:
 		explicit                  Sprite(World *_Owner);
@@ -24,4 +24,4 @@ typedef class Sprite: public Visible
 		                          V1,
                                   U2,
 							      V2;
-} *PSprite;
+};

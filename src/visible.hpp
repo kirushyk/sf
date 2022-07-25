@@ -7,10 +7,10 @@
 
 #pragma once
 
-typedef class Visible: public Root
+class Visible: public Root
 {
 	public:
 		explicit                  Visible(World *_Owner);
 		virtual void              Iteration();
 		                          ~Visible();
-} *PVisible;
+};

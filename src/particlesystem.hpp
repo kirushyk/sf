@@ -7,7 +7,7 @@
 
 #pragma once
 
-typedef class ParticleSystem: public Visible
+class ParticleSystem: public Visible
 {
 	public:
 		explicit                  ParticleSystem(World *_Owner, uint16_t _AmountOfParticles);
@@ -38,4 +38,4 @@ typedef class ParticleSystem: public Visible
 		} *PParticle;
 		PParticle                 Particles;
 		uint16_t                  AmountOfParticles;
-} *PParticleSystem;
+};

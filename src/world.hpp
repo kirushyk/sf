@@ -7,7 +7,7 @@
 
 #pragma once
 
-typedef class World
+class World
 {
     public:
         explicit                  World();
@@ -19,7 +19,7 @@ typedef class World
         Color                     Background;
         uint32_t                  AmountOfObjects,
                                   ElapsedTime;
-        std::list<PRoot>          Objects;
-        std::list<PActor>         Actors;
+        std::list<Root *>         Objects;
+        std::list<Actor *>        Actors;
         float                     Gravity;
-} *PWorld;
+};

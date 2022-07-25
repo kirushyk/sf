@@ -7,7 +7,7 @@
 
 #pragma once
 
-typedef class Application
+class Application
 {
     public:
                                   Application();
@@ -16,4 +16,4 @@ typedef class Application
         virtual int               MainLoop();
         virtual int               Release();
         virtual                   ~Application();
-} *PApplication;
+};

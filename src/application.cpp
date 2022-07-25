@@ -6,16 +6,15 @@
  */
 #include "sf.hpp"
 
-PWorld           w;
-PTexturesManager t;
-PSprite          Title,
-                 Background0;
-PPlayer          player;
+World *           w;
+TexturesManager * t;
+Sprite * Title, * Background0;
+Player *          player;
 
 #define BADSCOUNT 4
 
-PCreature        Bads[BADSCOUNT];
-PParticleSystem  psEx;
+Creature *        Bads[BADSCOUNT];
+ParticleSystem *  psEx;
 
 #define WIDTH 800
 #define HEIGHT 600

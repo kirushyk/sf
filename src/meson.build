@@ -4,7 +4,6 @@ sources = [
     'collision.cpp',
     'creature.cpp',
     'font.cpp',
-    'game.cpp',
     'level.cpp',
     'main.cpp',
     'particlesystem.cpp',

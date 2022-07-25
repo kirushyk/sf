@@ -9,7 +9,7 @@
 
 int main(int argc, char** argv)
 {
-	PApplication StrangeFruits = new Game();
+	PApplication StrangeFruits = new Application();
 	StrangeFruits->Run();
 	delete StrangeFruits;
 	return 0;

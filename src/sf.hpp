@@ -38,7 +38,6 @@
 #include "sprite.hpp"
 #include "level.hpp"
 #include "application.hpp"
-#include "game.hpp"
 
 extern World           *w;
 extern TexturesManager *t;

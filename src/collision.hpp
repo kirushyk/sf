@@ -5,7 +5,4 @@
  *
  */
 
-#ifndef COLLISION_HPP
-#define COLLISION_HPP
-
-#endif
+#pragma once

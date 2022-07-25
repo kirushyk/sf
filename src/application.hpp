@@ -5,8 +5,7 @@
  *
  */
 
-#ifndef APPLICATION_HPP
-#define APPLICATION_HPP
+#pragma once
 
 typedef class Application
 {
@@ -18,5 +17,3 @@ typedef class Application
         virtual int               Release();
         virtual                   ~Application();
 } *PApplication;
-
-#endif

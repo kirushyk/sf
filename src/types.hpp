@@ -5,8 +5,7 @@
  *
  */
 
-#ifndef TYPES_HPP_INCLUDED
-#define TYPES_HPP_INCLUDED
+#pragma once
 
 #include <stdint.h>
 
@@ -44,5 +43,3 @@ typedef struct Color
 Color InterpolateColors(Color A, Color B, float Scalar);
 
 float frand(float min, float max);
-
-#endif

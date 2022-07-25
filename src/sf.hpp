@@ -5,8 +5,7 @@
  *
  */
 
-#ifndef SF_HPP
-#define SF_HPP
+#pragma once
 
 #include <stdint.h>
 #include <stdio.h>
@@ -51,5 +50,3 @@ extern Sprite          *LevelTiles[TILEY][TILEX];
 
 extern Level           CurrentLevel,
                        TheLevel;
-
-#endif

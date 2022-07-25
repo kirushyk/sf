@@ -5,8 +5,7 @@
  *
  */
 
-#ifndef ACTOR_HPP
-#define ACTOR_HPP
+#pragma once
 
 typedef class Actor: public Sprite
 {
@@ -22,5 +21,3 @@ typedef class Actor: public Sprite
         Vector                    Speed;
         bool                      Ricochet;
 } *PActor;
-
-#endif

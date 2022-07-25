@@ -6,8 +6,7 @@
  *
  */
 
-#ifndef SPRITE_HPP
-#define SPRITE_HPP
+#pragma once
 
 typedef class Sprite: public Visible
 {
@@ -26,5 +25,3 @@ typedef class Sprite: public Visible
                                   U2,
 							      V2;
 } *PSprite;
-
-#endif

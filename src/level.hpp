@@ -5,8 +5,7 @@
  *
  */
 
-#ifndef LEVEL_HPP
-#define LEVEL_HPP
+#pragma once
 
 #define MAX_AMOUNT_OF_LEVEL_SPRITES 32
 #define TILEX 64
@@ -37,5 +36,3 @@ typedef struct Level
 void LoadLevel(Level *);
 
 bool CanTakePosition(float x, float y, float width, float height);
-
-#endif

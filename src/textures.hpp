@@ -5,8 +5,7 @@
  *
  */
 
-#ifndef TEXTURES_HPP_INCLUDED
-#define TEXTURES_HPP_INCLUDED
+#pragma once
 
 #include <SDL.h>
 #include <SDL_ttf.h>
@@ -29,5 +28,3 @@ typedef class TexturesManager
 } *PTexturesManager;
 
 void print(SDL_Surface *sDest, char *message, TTF_Font *font, SDL_Color color, SDL_Rect rect);
-
-#endif

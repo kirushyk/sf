@@ -5,8 +5,7 @@
  *
  */
 
-#ifndef PLAYER_HPP
-#define PLAYER_HPP
+#pragma once
 
 enum BeastType {bNone, bBeast};
 
@@ -18,5 +17,3 @@ typedef class Player: public Creature
 		virtual void              Act();
 		BeastType                 Beast;
 } *PPlayer;
-
-#endif

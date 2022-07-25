@@ -5,8 +5,7 @@
  *
  */
 
-#ifndef PARTICLESYSTEM_HPP
-#define PARTICLESYSTEM_HPP
+#pragma once
 
 typedef class ParticleSystem: public Visible
 {
@@ -40,4 +39,3 @@ typedef class ParticleSystem: public Visible
 		PParticle                 Particles;
 		uint16_t                  AmountOfParticles;
 } *PParticleSystem;
-#endif

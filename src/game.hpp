@@ -5,7 +5,7 @@
  *
  */
 
-#include "sf.hpp"
+#pragma once
 
 typedef class Game: public Application
 {

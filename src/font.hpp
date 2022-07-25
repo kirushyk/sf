@@ -5,7 +5,4 @@
  *
  */
 
-#ifndef FONT_HPP
-#define FONT_HPP
-
-#endif
+#pragma once

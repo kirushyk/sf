@@ -5,8 +5,7 @@
  *
  */
 
-#ifndef CREATURE_HPP
-#define CREATURE_HPP
+#pragma once
 
 enum RunDirectionType {rdNone, rdLeft, rdRight, rdFlightLeft, rdFlightRight};
 enum AIType {aiNone, aiRun, aiJump, aiGuard};
@@ -33,5 +32,3 @@ typedef class Creature: public Actor
     RunDirectionType         AIDest;
 
 } *PCreature;
-
-#endif

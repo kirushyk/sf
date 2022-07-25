@@ -5,8 +5,7 @@
  *
  */
 
-#ifndef VISIBLE_HPP
-#define VISIBLE_HPP
+#pragma once
 
 typedef class Visible: public Root
 {
@@ -15,5 +14,3 @@ typedef class Visible: public Root
 		virtual void              Iteration();
 		                          ~Visible();
 } *PVisible;
-
-#endif

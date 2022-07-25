@@ -5,8 +5,7 @@
  *
  */
 
-#ifndef ROOT_HPP
-#define ROOT_HPP
+#pragma once
 
 enum EntityType {etRoot, etVisible, etSprite, etParticleSystem, etActor, etCreature, etPlayer};
 
@@ -25,5 +24,3 @@ typedef class Root
 		class World              *const Owner;
 		bool                     TreatmentInIteration;
 } *PRoot;
-
-#endif

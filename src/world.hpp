@@ -5,8 +5,7 @@
  *
  */
 
-#ifndef WORLD_HPP
-#define WORLD_HPP
+#pragma once
 
 typedef class World
 {
@@ -24,5 +23,3 @@ typedef class World
         std::list<PActor>         Actors;
         float                     Gravity;
 } *PWorld;
-
-#endif

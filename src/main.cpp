@@ -1,5 +1,5 @@
 /*
- * (c) 2009, 2010 Kyrylo Polezhajev
+ * (c) 2009, 2010 Kyrylo Polezhaiev
  *
  * Strange fruits
  *

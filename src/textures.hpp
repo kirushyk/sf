@@ -1,5 +1,5 @@
 /*
- * (c) 2009, Kyrylo Polezhajev
+ * (c) 2009, Kyrylo Polezhaiev
  *
  * textures.hpp:
  *

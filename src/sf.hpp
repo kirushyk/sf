@@ -23,7 +23,6 @@
 #include <GL/glu.h>
 #endif
 
-#include "collision.hpp"
 #include "types.hpp"
 #include "textures.hpp"
 #include "root.hpp"
@@ -31,7 +30,6 @@
 #include "sprite.hpp"
 #include "actor.hpp"
 #include "world.hpp"
-#include "font.hpp"
 #include "particlesystem.hpp"
 #include "creature.hpp"
 #include "player.hpp"

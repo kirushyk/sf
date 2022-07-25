@@ -1,9 +1,7 @@
 sources = [
     'actor.cpp',
     'application.cpp',
-    'collision.cpp',
     'creature.cpp',
-    'font.cpp',
     'level.cpp',
     'main.cpp',
     'particlesystem.cpp',
